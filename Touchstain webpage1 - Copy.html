@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial‑scale=1.0"/>
+  <title>Touchstains Remover</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin:0;
+      font-family:'Montserrat',sans-serif;
+      background:linear-gradient(-45deg,#fceabb,#f8b500,#f12711,#f5af19);
+      background-size:400% 400%;
+      animation:gradientBG 15s ease infinite;
+      color:#333;
+      text-align:center;
+    }
+    @keyframes gradientBG {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    header {background:#ffffffd0;padding:40px 20px;box-shadow:0 4px 10px rgba(0,0,0,0.1);animation:slideDown 1s ease forwards;}
+    header h1 {font-size:3rem;color:#2a2a2a;margin:0;}
+    header p {font-size:1.2rem;color:#555;margin-top:10px;}
+    .hero {padding:60px 20px;}
+    .hero img {max-width:300px;width:90%;border-radius:20px;margin-bottom:30px;transition:transform .4s;}
+    .hero img:hover {transform:scale(1.05);}
+    .hero h2 {font-size:2rem;margin:10px 0;}
+    .hero p {font-size:1.1rem;color:#222;max-width:600px;margin:0 auto;}
+    .section {padding:60px 20px;}
+    .section h2 {font-size:2rem;color:#2a2a2a;margin-bottom:20px;}
+    .btn {
+      display:inline-flex;align-items:center;
+      background:#007bff;color:#fff;padding:12px 25px;
+      border:none;border-radius:8px;margin:10px;
+      font-size:16px;font-weight:bold;
+      text-decoration:none;transition:background .3s;
+    }
+    .btn:hover{background:#0056b3;}
+    .btn img{height:20px;margin-right:8px;}
+    .amazon-btn{background:#ff9900;}
+    .amazon-btn:hover{background:#cc7a00;}
+    .how‑to‑use{margin:30px 0;}
+    .toggle-button{background:#28a745;color:#fff;padding:12px 20px;border:none;border-radius:50px;cursor:pointer;font-size:16px;font-weight:bold;transition:background .3s;}
+    .toggle-button:hover{background:#218838;}
+    .how-description{display:none;margin:20px auto;font-size:1rem;max-width:600px;color:#222;background:#ffffffb3;padding:15px;border-radius:12px;}
+    .video-section iframe{width:90%;max-width:500px;height:315px;border-radius:16px;margin-top:20px;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+    .contact-section{background:#ffffffd0;padding:50px 20px;}
+    .contact-links a{display:inline-block;margin:10px 20px;font-size:18px;color:#333;text-decoration:none;font-weight:bold;border:2px solid #333;padding:12px 20px;border-radius:10px;transition:background .3s;background:#fff;}
+    .contact-links a:hover{background:#333;color:#fff;}
+    footer{background:#1f1f1f;color:#fff;padding:20px;font-size:14px;}
+    @keyframes slideDown{0%{transform:translateY(-40px);opacity:0;}100%{transform:translateY(0);opacity:1}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Touchstains Remover</h1>
+    <p>Just drop, rub, and go!</p>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <img src="https://i.postimg.cc/ZY8YxxhK/1-set.png" alt="Touchstains Product">
+    <h2>Instant Stain Removal</h2>
+    <p>Touchstains removes stains from any kind of clothes within seconds — suitable for everyone, anytime, anywhere!</p>
+  </section>
+
+  <section class="section" data-aos="fade-right">
+    <h2>Why Choose Touchstains?</h2>
+    <p>✔ Works on all fabrics<br>✔ Quick and easy to use<br>✔ Safe and effective<br>✔ Travel-friendly</p>
+  </section>
+
+  <section class="section" data-aos="fade-left">
+    <h2>Order Now</h2>
+    <a href="https://www.flipkart.com/touchstains-fabric-stain-remove-all-types-clothes-6-set-12-piece-remover/p/itm844ecf7cd918f?pid=SRMHEMFHPQFJWDHN" class="btn" target="_blank">
+      <img src="https://www.citypng.com/public/uploads/preview/hd-flipkart-round-logo-icon-transparent-png-27954.png" alt="Flipkart Logo">Order on Flipkart
+    </a>
+    <a href="https://www.amazon.in/gp/product/B0DMFTN79N" class="btn amazon-btn" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg" alt="Amazon Logo">Order on Amazon
+    </a>
+  </section>
+
+  <section class="section how-to-use" data-aos="fade-up">
+    <h2>🧪 How to Use</h2>
+    <button class="toggle-button" onclick="toggleHowTo()">Click to Reveal Instructions</button>
+    <div class="how-description" id="howDesc">
+      It is very easy to use: First, use liquid no. 1 on the stain and rub it. Then, use liquid no. 2, rub again, and wash the clothes gently — the stain will go away!
+    </div>
+  </section>
+
+  <section class="section video-section" data-aos="zoom-in">
+    <h2>🎥 Watch How It Works</h2>
+    <iframe src="https://www.youtube.com/embed/egZ5z1LfAqA" title="Touchstains Demo" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <section class="section contact-section" data-aos="fade-up">
+    <h2>📞 Contact Us</h2>
+    <div class="contact-links">
+      <a href="https://wa.me/917679416294" target="_blank">💬 WhatsApp: 7679416294</a>
+      <a href="tel:+917679416294">📱 Call: 7679416294</a>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 Touchstains. All rights reserved.</footer>
+
+  <script>
+    function toggleHowTo() {
+      var x = document.getElementById("howDesc");
+      x.style.display = x.style.display === "block" ? "none" : "block";
+    }
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration:1000 });</script>
+</body>
+</html>
