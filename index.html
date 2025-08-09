@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial‑scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Touchstains Remover</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     header h1 {font-size:3rem;color:#2a2a2a;margin:0;}
     header p {font-size:1.2rem;color:#555;margin-top:10px;}
     .hero {padding:60px 20px;}
-    .hero img {max-width:300px;width:90%;border-radius:20px;margin-bottom:30px;transition:transform .4s;}
+    .hero img {max-width:300px;width:90%;border-radius:20px;margin-bottom:30px;transition:transform .4s;cursor:pointer;}
     .hero img:hover {transform:scale(1.05);}
     .hero h2 {font-size:2rem;margin:10px 0;}
     .hero p {font-size:1.1rem;color:#222;max-width:600px;margin:0 auto;}
@@ -42,7 +42,7 @@
     .btn img{height:20px;margin-right:8px;}
     .amazon-btn{background:#ff9900;}
     .amazon-btn:hover{background:#cc7a00;}
-    .how‑to‑use{margin:30px 0;}
+    .how-to-use{margin:30px 0;}
     .toggle-button{background:#28a745;color:#fff;padding:12px 20px;border:none;border-radius:50px;cursor:pointer;font-size:16px;font-weight:bold;transition:background .3s;}
     .toggle-button:hover{background:#218838;}
     .how-description{display:none;margin:20px auto;font-size:1rem;max-width:600px;color:#222;background:#ffffffb3;padding:15px;border-radius:12px;}
@@ -52,6 +52,31 @@
     .contact-links a:hover{background:#333;color:#fff;}
     footer{background:#1f1f1f;color:#fff;padding:20px;font-size:14px;}
     @keyframes slideDown{0%{transform:translateY(-40px);opacity:0;}100%{transform:translateY(0);opacity:1}}
+    
+    /* Popup video styles */
+    .video-popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .video-popup video {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -62,7 +87,7 @@
   </header>
 
   <section class="hero" data-aos="fade-up">
-    <img src="https://i.postimg.cc/ZY8YxxhK/1-set.png" alt="Touchstains Product">
+    <img src="https://i.postimg.cc/ZY8YxxhK/1-set.png" alt="Touchstains Product" onclick="openVideo()">
     <h2>Instant Stain Removal</h2>
     <p>Touchstains removes stains from any kind of clothes within seconds — suitable for everyone, anytime, anywhere!</p>
   </section>
@@ -105,10 +130,27 @@
 
   <footer>&copy; 2025 Touchstains. All rights reserved.</footer>
 
+  <!-- Popup Video -->
+  <div class="video-popup" id="videoPopup">
+    <span class="close-btn" onclick="closeVideo()">&times;</span>
+    <video id="productVideo" controls>
+      <source src="uckkpg.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
   <script>
     function toggleHowTo() {
       var x = document.getElementById("howDesc");
       x.style.display = x.style.display === "block" ? "none" : "block";
+    }
+    function openVideo() {
+      document.getElementById("videoPopup").style.display = "flex";
+      document.getElementById("productVideo").play();
+    }
+    function closeVideo() {
+      document.getElementById("videoPopup").style.display = "none";
+      document.getElementById("productVideo").pause();
     }
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
