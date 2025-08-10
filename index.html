@@ -188,6 +188,128 @@
       background-position: -100%;
     }
 
+
+    /* Hero Background Accent */
+    .hero-accent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle at center, rgba(255, 122, 45, 0.25), transparent 70%);
+      filter: blur(80px);
+      z-index: -1;
+      animation: accentFloat 10s ease-in-out infinite;
+    }
+    @keyframes accentFloat {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -52%) scale(1.05); }
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Separate order box */
+    .order-box {
+      background: linear-gradient(180deg, #fffdfc, #fff8f4);
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .order-box {
+      background: linear-gradient(180deg, #fffdfc, #fff8f4);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 24px auto 0 auto;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      max-width: 500px;
+    }
+
+    .meesho-btn {
+      background: #ff2b85;
+    }
+    .meesho-btn:hover {
+      background: #d51f6c;
+    }
+
+    .order-box .btn {
+      margin: 6px;
+    }
+
+    .buy-disclaimer {
+      background: #ffe5e5;
+      border: 1px solid #ff9999;
+      color: #b30000;
+      padding: 12px 16px;
+      margin-top: 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.4;
+      display: flex;
+      align-items: flex-start;
+    }
+    .buy-disclaimer span:first-child {
+      font-size: 18px;
+      margin-right: 6px;
+    }
+
+    .buy-disclaimer {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      color: #000;
+      padding: 12px 16px;
+      margin-top: 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.4;
+      display: flex;
+      align-items: flex-start;
+    }
+    .buy-disclaimer span:first-child {
+      font-size: 18px;
+      margin-right: 6px;
+    }
+
+.before-after-section {
+  margin-top: 40px;
+  text-align: center;
+}
+.ba-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 880px;
+  margin: 20px auto;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(16,24,40,0.12);
+}
+.ba-slider img {
+  display: block;
+  width: 100%;
+}
+.ba-slider .resize {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+.ba-slider .handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #ff7a2d;
+  cursor: ew-resize;
+  z-index: 2;
+}
 </style>
 </head>
 <body>
@@ -204,7 +326,7 @@
 <div class="muted">Trusted by customers — 2025</div>
 </header>
 <!-- HERO -->
-<section class="hero" data-aos="fade-up">
+<section class="hero" data-aos="fade-up"><div class="hero-accent"></div>
 <!-- LEFT: Image & quick CTA -->
 <div class="card" data-aos="fade-right">
 <div class="product-media">
@@ -229,14 +351,6 @@
 <div class="feat">Travel friendly</div>
 <div class="feat">Safe &amp; effective</div>
 </div>
-<div class="order-row" id="order" style="margin-top:18px;">
-<a class="btn flipkart-btn" href="https://www.flipkart.com/touchstains-fabric-stain-remove-all-types-clothes-6-set-12-piece-remover/p/itm844ecf7cd918f?pid=SRMHEMFHPQFJWDHN" target="_blank">
-<img alt="" aria-hidden="true" src="https://www.citypng.com/public/uploads/preview/hd-flipkart-round-logo-icon-transparent-png-27954.png"/>Order on Flipkart
-          </a>
-<a class="btn amazon-btn" href="https://www.amazon.in/gp/product/B0DMFTN79N" target="_blank">
-<img alt="" aria-hidden="true" src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg"/>Order on Amazon
-          </a>
-</div>
 <div class="how-to-use" style="margin-top:18px;">
 <h3 style="margin:0 0 10px 0;">🧪 How to Use</h3>
 <button class="toggle-button" onclick="toggleHowTo()">Click to Reveal Instructions</button>
@@ -244,7 +358,14 @@
             It is very easy to use: First, apply liquid No.1 to the stain and rub gently. Then apply liquid No.2, rub again, and launder as usual — the stain will be removed.
           </div>
 </div>
-</div>
+</div><div class="order-box"><h3 style="margin-top:0;margin-bottom:10px;font-size:20px;color:#222;">🛒 Buy Now</h3><div class="order-row" id="order" style="margin-top:18px;">
+<a class="btn flipkart-btn" href="https://www.flipkart.com/touchstains-fabric-stain-remove-all-types-clothes-6-set-12-piece-remover/p/itm844ecf7cd918f?pid=SRMHEMFHPQFJWDHN" target="_blank">
+<img alt="" aria-hidden="true" src="https://www.citypng.com/public/uploads/preview/hd-flipkart-round-logo-icon-transparent-png-27954.png"/>Order on Flipkart
+          </a>
+<a class="btn amazon-btn" href="https://www.amazon.in/gp/product/B0DMFTN79N" target="_blank">
+<img alt="" aria-hidden="true" src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg"/>Order on Amazon
+          </a>
+</div><a class="btn meesho-btn" href="https://www.meesho.com/s/p/7kpve9?utm_source=s_cc" target="_blank"><img alt="" aria_hidden="true" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Meesho_Logo_Full.png" style="height:18px;margin-right:10px"/>Order on Meesho</a></div>
 </section>
 <!-- WHY CHOOSE -->
 <section class="section" data-aos="fade-up">
@@ -263,7 +384,7 @@
 <!-- embedded YouTube Shorts via embed/ID -->
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/DU71eTrzMuU" title="Touchstains Demo"></iframe>
 </div>
-</section>
+</section><section class="before-after-section" data-aos="fade-up"><h2>🪄 See the Difference</h2><div class="ba-slider"><img alt="Before cleaning" src="https://i.postimg.cc/k49dPN6m/Chat-GPT-Image-Aug-10-2025-01-35-37-PM.png"/><div class="resize"><img alt="After cleaning" src="https://i.postimg.cc/k49dPN6m/Chat-GPT-Image-Aug-10-2025-01-35-37-PM.png"/></div><span class="handle"></span></div></section>
 <!-- CONTACT / SOCIAL -->
 <section class="contact-section" data-aos="fade-up">
 <h2>📞 Contact Us</h2>
@@ -284,7 +405,7 @@
             Use only as directed and avoid contact with eyes and skin. In the event of accidental ingestion or eye contact, seek medical advice promptly.
           </p>
 </details>
-</div>
+</div><div class="buy-disclaimer"><span>⚠ </span><span>This product is intended solely for the removal of stains from fabrics. Do not use for any other purpose. Keep out of reach of children and store away from direct contact with skin and eyes.</span></div>
 </section>
 <footer>
       © 2025 Touchstains. All rights reserved.
@@ -351,5 +472,24 @@
     headings.forEach(h => observer.observe(h));
 
 </script>
-</body>
+<script>
+document.querySelectorAll('.ba-slider').forEach(function(slider){
+  let handle = slider.querySelector('.handle');
+  let resize = slider.querySelector('.resize');
+  let dragging = false;
+  
+  handle.addEventListener('mousedown', function(){ dragging = true; });
+  window.addEventListener('mouseup', function(){ dragging = false; });
+  window.addEventListener('mousemove', function(e){
+    if(!dragging) return;
+    let rect = slider.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+    if(x < 0) x = 0;
+    if(x > rect.width) x = rect.width;
+    let percent = (x / rect.width) * 100;
+    handle.style.left = percent + '%';
+    resize.style.width = percent + '%';
+  });
+});
+</script></body>
 </html>
