@@ -310,6 +310,44 @@
   cursor: ew-resize;
   z-index: 2;
 }
+.more-products-section {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+.more-products-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.more-products-buttons a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+.more-products-buttons a.flipkart {
+  background: #2874f0;
+}
+.more-products-buttons a.flipkart:hover {
+  background: #0f5abc;
+}
+.more-products-buttons a.indiamart {
+  background: #008000;
+}
+.more-products-buttons a.indiamart:hover {
+  background: #006400;
+}
+
 </style>
 </head>
 <body>
@@ -395,7 +433,21 @@
 <img alt="Instagram logo" aria-hidden="true" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"/>
 <span style="font-weight:800;color:#E1306C">Instagram</span>
 </a>
-</div>
+</div><br>
+<!-- MORE PRODUCTS SECTION -->
+<section class="more-products-section" data-aos="fade-up">
+    <h3>🛍 More Products Like This</h3>
+    <div class="more-products-buttons">
+        <a href="https://dl.flipkart.com/s/gs8HnDuuuN" target="_blank" class="flipkart">View on Flipkart</a>
+        <a href="https://m.indiamart.com/pd/23117421273?4075482" target="_blank" class="indiamart">View on IndiaMART</a>
+    </div>
+</section>
+
+<!-- DISCLAIMER (collapsible) -->
+<div aria-hidden="false" class="disclaimer-card">
+<!-- DISCLAIMER (collapsible) -->
+<div aria-hidden="false" class="disclaimer-card">
+
 <!-- DISCLAIMER (collapsible) -->
 <div aria-hidden="false" class="disclaimer-card">
 <details class="disclaimer">
@@ -493,3 +545,4 @@ document.querySelectorAll('.ba-slider').forEach(function(slider){
 });
 </script></body>
 </html>
+
