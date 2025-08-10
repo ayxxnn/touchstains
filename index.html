@@ -1,17 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Touchstains Remover</title>
-
-  <!-- Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Touchstains Remover</title>
+<!-- Montserrat -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<style>
     :root{
       --accent:#ff7a2d;
       --accent-dark:#e25f08;
@@ -147,136 +145,160 @@
     @media (max-width:900px){ .video-card iframe{height:420px} }
     @media (max-width:600px){ .video-card iframe{height:320px} }
 
-  </style>
+  
+    /* Floating product image */
+    .product-thumb {
+      animation: floatImage 4s ease-in-out infinite;
+    }
+    @keyframes floatImage {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Glowing sweep hover */
+    .cta-btn, .btn {
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .cta-btn::after, .btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.4);
+      transform: skewX(-25deg);
+      transition: left 0.5s ease;
+      z-index: 1;
+    }
+    .cta-btn:hover::after, .btn:hover::after {
+      left: 200%;
+    }
+
+    /* Heading highlight animation */
+    h2, h3 {
+      display: inline-block;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #ffedc2 50%);
+      background-size: 220%;
+      transition: background-position 0.6s ease;
+    }
+    h2.highlighted, h3.highlighted {
+      background-position: -100%;
+    }
+
+</style>
 </head>
 <body>
-  <div class="wrap">
-
-    <!-- HEADER -->
-    <header data-aos="fade-down">
-      <div class="brand">
-        <div class="brand-logo" aria-hidden="true">TS</div>
-        <div>
-          <h1>Touchstains Remover</h1>
-          <p class="muted">Just drop, rub, and go!</p>
-        </div>
-      </div>
-      <div class="muted">Trusted by customers — 2025</div>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero" data-aos="fade-up">
-      <!-- LEFT: Image & quick CTA -->
-      <div class="card" data-aos="fade-right">
-        <div class="product-media">
-          <!-- click opens modal video player -->
-          <img id="productThumb" class="product-thumb" src="https://i.postimg.cc/ZY8YxxhK/1-set.png" alt="Touchstains Product" title="Click to watch demo">
-          <div style="text-align:center;width:100%">
-            <span class="kicker">Instant Stain Fix</span>
-            <div class="price-cta" style="justify-content:center">
-              <div class="price">Pocket-friendly</div>
-              <a class="cta-btn" href="#order">Order Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: Description & order links -->
-      <div class="card content" data-aos="fade-left">
-        <h2>Instant Stain Removal</h2>
-        <p>Touchstains removes stains from any kind of clothes within seconds — suitable for everyone, anytime, anywhere!</p>
-
-        <div class="features" aria-hidden="false">
-          <div class="feat">Works on all fabrics</div>
-          <div class="feat">Quick & easy</div>
-          <div class="feat">Travel friendly</div>
-          <div class="feat">Safe & effective</div>
-        </div>
-
-        <div class="order-row" id="order" style="margin-top:18px;">
-          <a class="btn flipkart-btn" href="https://www.flipkart.com/touchstains-fabric-stain-remove-all-types-clothes-6-set-12-piece-remover/p/itm844ecf7cd918f?pid=SRMHEMFHPQFJWDHN" target="_blank">
-            <img src="https://www.citypng.com/public/uploads/preview/hd-flipkart-round-logo-icon-transparent-png-27954.png" alt="" aria-hidden="true">Order on Flipkart
+<div class="wrap">
+<!-- HEADER -->
+<header data-aos="fade-down">
+<div class="brand">
+<div aria-hidden="true" class="brand-logo" style="padding:0;background:none;"><img alt="Touchstains Logo" src="https://i.postimg.cc/CLgxLYjY/Touch-Stains-Remover-Bottles-Display.png" style="width:56px;height:56px;border-radius:12px;object-fit:cover;box-shadow:0 8px 20px rgba(226,95,8,0.12);"/></div>
+<div>
+<h1>Touchstains Remover</h1>
+<p class="muted">Just drop, rub, and go!</p>
+</div>
+</div>
+<div class="muted">Trusted by customers — 2025</div>
+</header>
+<!-- HERO -->
+<section class="hero" data-aos="fade-up">
+<!-- LEFT: Image & quick CTA -->
+<div class="card" data-aos="fade-right">
+<div class="product-media">
+<!-- click opens modal video player -->
+<img alt="Touchstains Product" class="product-thumb" id="productThumb" src="https://i.postimg.cc/ZY8YxxhK/1-set.png" title="Click to watch demo"/>
+<div style="text-align:center;width:100%">
+<span class="kicker">Instant Stain Fix</span>
+<div class="price-cta" style="justify-content:center">
+<div class="price">Pocket-friendly</div>
+<a class="cta-btn" href="#order">Order Now</a>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: Description & order links -->
+<div class="card content" data-aos="fade-left">
+<h2>Instant Stain Removal</h2>
+<p>Touchstains removes stains from any kind of clothes within seconds — suitable for everyone, anytime, anywhere!</p>
+<div aria-hidden="false" class="features">
+<div class="feat">Works on all fabrics</div>
+<div class="feat">Quick &amp; easy</div>
+<div class="feat">Travel friendly</div>
+<div class="feat">Safe &amp; effective</div>
+</div>
+<div class="order-row" id="order" style="margin-top:18px;">
+<a class="btn flipkart-btn" href="https://www.flipkart.com/touchstains-fabric-stain-remove-all-types-clothes-6-set-12-piece-remover/p/itm844ecf7cd918f?pid=SRMHEMFHPQFJWDHN" target="_blank">
+<img alt="" aria-hidden="true" src="https://www.citypng.com/public/uploads/preview/hd-flipkart-round-logo-icon-transparent-png-27954.png"/>Order on Flipkart
           </a>
-
-          <a class="btn amazon-btn" href="https://www.amazon.in/gp/product/B0DMFTN79N" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg" alt="" aria-hidden="true">Order on Amazon
+<a class="btn amazon-btn" href="https://www.amazon.in/gp/product/B0DMFTN79N" target="_blank">
+<img alt="" aria-hidden="true" src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg"/>Order on Amazon
           </a>
-        </div>
-
-        <div class="how-to-use" style="margin-top:18px;">
-          <h3 style="margin:0 0 10px 0;">🧪 How to Use</h3>
-          <button class="toggle-button" onclick="toggleHowTo()">Click to Reveal Instructions</button>
-          <div class="how-description" id="howDesc" role="region" aria-live="polite">
+</div>
+<div class="how-to-use" style="margin-top:18px;">
+<h3 style="margin:0 0 10px 0;">🧪 How to Use</h3>
+<button class="toggle-button" onclick="toggleHowTo()">Click to Reveal Instructions</button>
+<div aria-live="polite" class="how-description" id="howDesc" role="region">
             It is very easy to use: First, apply liquid No.1 to the stain and rub gently. Then apply liquid No.2, rub again, and launder as usual — the stain will be removed.
           </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- WHY CHOOSE -->
-    <section class="section" data-aos="fade-up">
-      <h2>Why Choose Touchstains?</h2>
-      <p class="muted">A fast, reliable product for everyday stains — made for busy lives.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px;">
-        <div class="feat">Removes oil & grease</div>
-        <div class="feat">Pet & food safe</div>
-        <div class="feat">No harsh odors</div>
-      </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section class="video-section" data-aos="zoom-in">
-      <h2>🎥 Watch How It Works</h2>
-      <div class="video-wrapper" role="region" aria-label="Demo video">
-        <!-- embedded YouTube Shorts via embed/ID -->
-        <iframe src="https://www.youtube.com/embed/DU71eTrzMuU"
-                title="Touchstains Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <!-- CONTACT / SOCIAL -->
-    <section class="contact-section" data-aos="fade-up">
-      <h2>📞 Contact Us</h2>
-      <div class="contact-links" role="navigation" aria-label="Contact links">
-        <a href="https://wa.me/917679416294" target="_blank">💬 WhatsApp: 7679416294</a>
-        <a href="tel:+917679416294">📱 Call: 7679416294</a>
-
-        <a class="instagram-inline" href="https://www.instagram.com/touchstains_remover?igsh=MWRleHAyNXBlYWNkbA==" target="_blank" title="@touchstains_remover">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo" aria-hidden="true">
-          <span style="font-weight:800;color:#E1306C">Instagram</span>
-        </a>
-      </div>
-
-      <!-- DISCLAIMER (collapsible) -->
-      <div class="disclaimer-card" aria-hidden="false">
-        <details class="disclaimer">
-          <summary>Disclaimer — Safety & Usage</summary>
-          <p>
-            <strong>Important:</strong> Keep this product out of reach of children. This solution is intended strictly for cleaning and fabric stain removal purposes only.
+</div>
+</div>
+</section>
+<!-- WHY CHOOSE -->
+<section class="section" data-aos="fade-up">
+<h2>Why Choose Touchstains?</h2>
+<p class="muted">A fast, reliable product for everyday stains — made for busy lives.</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px;">
+<div class="feat">Removes oil &amp; grease</div>
+<div class="feat">Pet &amp; food safe</div>
+<div class="feat">No harsh odors</div>
+</div>
+</section>
+<!-- VIDEO SECTION -->
+<section class="video-section" data-aos="zoom-in">
+<h2>🎥 Watch How It Works</h2>
+<div aria-label="Demo video" class="video-wrapper" role="region">
+<!-- embedded YouTube Shorts via embed/ID -->
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/DU71eTrzMuU" title="Touchstains Demo"></iframe>
+</div>
+</section>
+<!-- CONTACT / SOCIAL -->
+<section class="contact-section" data-aos="fade-up">
+<h2>📞 Contact Us</h2>
+<div aria-label="Contact links" class="contact-links" role="navigation">
+<a href="https://wa.me/917679416294" target="_blank">💬 WhatsApp: 7679416294</a>
+<a href="tel:+917679416294">📱 Call: 7679416294</a>
+<a class="instagram-inline" href="https://www.instagram.com/touchstains_remover?igsh=MWRleHAyNXBlYWNkbA==" target="_blank" title="@touchstains_remover">
+<img alt="Instagram logo" aria-hidden="true" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"/>
+<span style="font-weight:800;color:#E1306C">Instagram</span>
+</a>
+</div>
+<!-- DISCLAIMER (collapsible) -->
+<div aria-hidden="false" class="disclaimer-card">
+<details class="disclaimer">
+<summary>Disclaimer — Safety &amp; Usage</summary>
+<p>
+<strong>Important:</strong> Keep this product out of reach of children. This solution is intended strictly for cleaning and fabric stain removal purposes only.
             Use only as directed and avoid contact with eyes and skin. In the event of accidental ingestion or eye contact, seek medical advice promptly.
           </p>
-        </details>
-      </div>
-    </section>
-
-    <footer>
-      &copy; 2025 Touchstains. All rights reserved.
+</details>
+</div>
+</section>
+<footer>
+      © 2025 Touchstains. All rights reserved.
     </footer>
-  </div>
-
-  <!-- VIDEO MODAL -->
-  <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="video-card" role="document">
-      <iframe id="modalIframe" src="" title="Product demo" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
+</div>
+<!-- VIDEO MODAL -->
+<div aria-hidden="true" aria-modal="true" class="modal" id="videoModal" role="dialog">
+<div class="video-card" role="document">
+<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" id="modalIframe" src="" title="Product demo"></iframe>
+</div>
+</div>
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
     AOS.init({ duration: 900, once: true });
 
     // Toggle How-to
@@ -316,6 +338,18 @@
       modalIframe.src = ''; // stop playback
       videoModal.setAttribute('aria-hidden','true');
     }
-  </script>
+  
+    // Heading highlight on scroll
+    const headings = document.querySelectorAll("h2, h3");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("highlighted");
+        }
+      });
+    }, { threshold: 0.5 });
+    headings.forEach(h => observer.observe(h));
+
+</script>
 </body>
-</html> 
+</html>
